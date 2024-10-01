@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="card">
+      <form (ngSubmit)="doSubmitForm()">
+        <h3>Send Email</h3>
+        <mat-form-field class="field" appearance="outline">
+          <mat-label>To</mat-label>
+          <input name="to" [(ngModel)]="data.to" matInput placeholder="example@example.com" />
+        </mat-form-field>
+  
+        <mat-form-field class="field" appearance="outline">
+          <mat-label>Subject</mat-label>
+          <input name="subject" [(ngModel)]="data.subject" matInput placeholder="Enter subject" />
+        </mat-form-field>
+  
+        <mat-form-field class="field">
+          <mat-label>Compose mail</mat-label>
+          <textarea
+            name="message" [(ngModel)]="data.message"
+            rows="7"
+            matInput
+            placeholder="send mail to anyone"
+          ></textarea>
+        </mat-form-field>
+  
+        <div class="text-center">
+          <mat-spinner *ngIf="flag" style="margin:auto;"></mat-spinner>
+          <button [disabled]="flag" type="submit" mat-flat-button>Send</button>
+          <button type="reset" mat-raised-button>Reset</button>
+        </div>
+      </form>
+    </div>
+  </div>  
